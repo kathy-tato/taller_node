@@ -245,16 +245,21 @@ var users = [
 var usuarios = users.map(function(u){
 	return u.name;
 });
-console.log(usuarios);
+//console.log(usuarios);
 
-var usuarios = users.map(function(u){
-	return u.address.geo.lat;
+var latitud = users.map(function(u){
+	return parseFloat(u.address.geo.lat);
 });
-console.log(usuarios);
+//console.log(latitud);
 
-var suma = [1,2,3,4,5,6].reduce((prev, next) =>{
+var suma = latitud.reduce(function(prev, next) {
 	return prev + next;
 }, 0);
+console.log("Promedio de las latitudes: " + (suma/latitud.length).toFixed(3));
+
+
+/*var total = [0, 1, 2, 3].reduce(function(a, b){ return a + b; });
+console.log(total);
 
 var saludarAlguien = function(nombre){
 	console.log()
@@ -268,7 +273,7 @@ var persona = {
 		edad: 50
 	}
 }
-
+*/
 //console.log(persona.nombre);
 //console.log("ads");
 
