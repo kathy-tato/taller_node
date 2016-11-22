@@ -67,7 +67,6 @@ const fibonacci = require('./lib/fib.js');
 app.get('/fibonacci/:n', (req, res) => {
 
 	var valor = Number(req.params.n);
-	var aux = "fibonacci-" + valor; 
 
     var result = {};
     result['fibonacci-'+valor] = fibonacci.fib(valor);
